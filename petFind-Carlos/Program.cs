@@ -425,3 +425,4 @@ struct Mascota
     public string rasgoCaracteristico;
     public bool extraviada;
 }
+
