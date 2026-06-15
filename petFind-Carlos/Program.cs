@@ -386,8 +386,11 @@ void reportarMascotaDesaparecida()
             Console.Write("Regresando al menu");
             for(int i =0; i<5; i++)
             {
-
+                Thread.Sleep(350);
+                Console.Write(". ");
             }
+            Console.ResetColor();
+            Console.Clear();
 
         }
     } while (extraviadoInput != "no");
@@ -449,9 +452,6 @@ void mascotasDesaparecidas()
             }
         }
     }
-        
-    // Se pone "i" por DESAPARECIDOS
-
 }
 
 void billeteraPetPoints()
