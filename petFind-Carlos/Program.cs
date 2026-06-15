@@ -379,7 +379,7 @@ void mascotasDesaparecidas()
     {
         if (mascotas[i].extraviada = true)
         {
-            Console.Write($"#{i + 1} {mascotas[i].nombre}");
+            Console.Write($"#{i+1}. ID: {mascotas[i].id} - Nombre: {mascotas[i].nombre} - Especie: {mascotas[i].especie} - Raza: {mascotas[i].raza}\n Rasgo caracteristico: {mascotas[i].rasgoCaracteristico}\n");
         }
     }
 }
