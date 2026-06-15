@@ -7,6 +7,7 @@ int totalUsuarios = 0;
 bool sesionIniciada = false;
 string usuarioActivo = "";
 int menu = 0;
+int mascotasExtraviadas = 0;
 
 void inicio()
 {
@@ -370,20 +371,47 @@ void mascotasDesaparecidas()
     Console.ResetColor();
     Console.Clear();
 
-    // 
-    Console.ForegroundColor = ConsoleColor.Green;
-    Console.WriteLine("El listado de mascotas desaparecidas son: ");
+    
 
-    // Se pone "i" por DESAPARECIDOS
-    for (int i = 0; i < totalMascotas; i++)
+    // Si no hay mascotas extraviadas
+    if (mascotasExtraviadas == 0)
     {
-        if (mascotas[i].extraviada = true)
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("No hay mascotas desaparecidas reportadas\n\nVolviendo al menu");
+        for (int j = 0; j < 5; j++)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            // ID, nombreMascota, Especie, Raza, RasgoCaracteristico, dueñoMascota
-            Console.Write($"#{i+1}. ID: {mascotas[i].id} - Nombre: {mascotas[i].nombre} - Especie: {mascotas[i].especie} - Raza: {mascotas[i].raza}\n Rasgo caracteristico: {mascotas[i].rasgoCaracteristico} - Dueño de mascota: {mascotas[i].duenoUsuario}\n");
+            Thread.Sleep(350);
+            Console.Write(". ");
+        }
+        Console.ResetColor();
+        Console.Clear();
+    }
+
+    // pero si acaso si hay
+    else if (mascotasExtraviadas >= 1)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"Hay {mascotasExtraviadas} mascotas extraviadas: ");
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("El listado de mascotas desaparecidas son: ");
+
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        for (int i = 0; i < totalMascotas; i++)
+        {
+            //Si hay alguna mascota extraviada, ademas agrupar las que tengan su bool como true
+            if (mascotas[i].extraviada = true)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                // ID, nombreMascota, Especie, Raza, RasgoCaracteristico, dueñoMascota
+                Console.Write($"#{i + 1}. ID: {mascotas[i].id} - Nombre: {mascotas[i].nombre} - Especie: {mascotas[i].especie} - Raza: {mascotas[i].raza}\n Rasgo caracteristico: {mascotas[i].rasgoCaracteristico} - Dueño de mascota: {mascotas[i].duenoUsuario}\n");
+            }
         }
     }
+        
+    // Se pone "i" por DESAPARECIDOS
+
 }
 
 void billeteraPetPoints()
