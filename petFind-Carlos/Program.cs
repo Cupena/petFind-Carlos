@@ -379,7 +379,9 @@ void mascotasDesaparecidas()
     {
         if (mascotas[i].extraviada = true)
         {
-            Console.Write($"#{i+1}. ID: {mascotas[i].id} - Nombre: {mascotas[i].nombre} - Especie: {mascotas[i].especie} - Raza: {mascotas[i].raza}\n Rasgo caracteristico: {mascotas[i].rasgoCaracteristico}\n");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            // ID, nombreMascota, Especie, Raza, RasgoCaracteristico, dueñoMascota
+            Console.Write($"#{i+1}. ID: {mascotas[i].id} - Nombre: {mascotas[i].nombre} - Especie: {mascotas[i].especie} - Raza: {mascotas[i].raza}\n Rasgo caracteristico: {mascotas[i].rasgoCaracteristico} - Dueño de mascota: {mascotas[i].duenoUsuario}\n");
         }
     }
 }
