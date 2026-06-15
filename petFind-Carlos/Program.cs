@@ -353,6 +353,46 @@ void registroMascota()
 
 void reportarMascotaDesaparecida()
 {
+    string extraviadoInput = "";
+    //Entrando al sistema
+    Console.Clear();
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.WriteLine("  --  Ingresando al sistema para reportar mascotas desaparecidas  --  ");
+    for(int i = 0; i<5;i++)
+    {
+        Thread.Sleep(350);
+        Console.Write(". ");
+    }
+    Console.WriteLine("");
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("Ingresado correctamente.");
+    Thread.Sleep(600);
+    Console.ResetColor();
+    Console.Clear();
+
+    //Hemos entrado
+    do
+    {
+        Console.WriteLine("  -- Se ha extraviado su mascota?  si/no --  ");
+        extraviadoInput = Console.ReadLine()!;
+        if (extraviadoInput == "si")
+        {
+
+        }
+        else if(extraviadoInput == "no")
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("Regresando al menu");
+            for(int i =0; i<5; i++)
+            {
+
+            }
+
+        }
+    } while (extraviadoInput != "no");
+    
+
 
 }
 
